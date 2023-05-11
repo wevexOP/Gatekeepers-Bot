@@ -20,6 +20,22 @@ client.on("messageCreate", async (message) => {
     console.log(message)
     
     if (!message?.author.bot) {
-        message.author.send('Echo ${message.content}');
+        message.author.send({
+            content: 'Push my btns!',
+            components: [btn]
+        });
     }
+});
+
+client.on('interactionCreate', async interaction => {
+    
+    if (interaction.customId === 'hiMom') {
+
+        await interaction.reply({
+            content: 'Mom says hi back!',
+            ephemeral: true
+        });
+
+    }
+
 });
