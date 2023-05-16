@@ -1,5 +1,7 @@
-// new source file
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+const { Client, IntentsBitField } = require('discord.js');
+
+const client = new Client({
+    intents: [
+        IntentsBitField.Flags.Guilds,
+    ]
+}); 
