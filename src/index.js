@@ -32,8 +32,14 @@ client.on('interactionCreate', (interaction) => {
     if (interaction.commandName === 'hey') {
         interaction.reply('Hey, how are ya?');
     }
-    if (interaction.commandName === 'ping') {
-        interaction.reply('pong!');
+    if (interaction.commandName === 'anygamers') {
+        interaction.reply('Where gamers?');
+    }
+    if (interaction.commandName === 'add') {
+        const num1 = interaction.options.get('first-number')?.value;
+        const num2 = interaction.options.get('second-number')?.value;
+
+        interaction.reply(`The sum is ${num1 + num2}.`)
     }
 });
 
